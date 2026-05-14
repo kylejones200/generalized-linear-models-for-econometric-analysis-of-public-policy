@@ -1,7 +1,7 @@
 # Generalized Linear Models for Econometric Analysis of Public Policy
 
-**Published:** draft
-**Medium:** [https://medium.com/@kyle-t-jones/generalized-linear-models-for-econometric-analysis-of-public-policy-915736acfa29](https://medium.com/@kyle-t-jones/generalized-linear-models-for-econometric-analysis-of-public-policy-915736acfa29)
+Published: draft
+Medium: [https://medium.com/@kyle-t-jones/generalized-linear-models-for-econometric-analysis-of-public-policy-915736acfa29](https://medium.com/@kyle-t-jones/generalized-linear-models-for-econometric-analysis-of-public-policy-915736acfa29)
 
 ## About
 

@@ -9,43 +9,43 @@ Public policy decisions rely on a wide variety of data types. For example, publi
 
 GLMs provide a more flexible framework by allowing the dependent variable to follow distributions such as:
 
-- **Binomial Distribution** for binary outcomes (e.g., policy adoption: yes/no)
-- **Poisson Distribution** for count data (e.g., crime incidents, healthcare visits)
-- **Gamma Distribution** for continuous, positive data (e.g., healthcare costs)
+- Binomial Distribution for binary outcomes (e.g., policy adoption: yes/no)
+- Poisson Distribution for count data (e.g., crime incidents, healthcare visits)
+- Gamma Distribution for continuous, positive data (e.g., healthcare costs)
 
 GLMs consist of three key components:
 
-1.  [**Random Component**: Specifies the distribution of the dependent variable.]
-2.  [**Systematic Component**: Describes the linear predictor, a linear combination of explanatory variables.]
-3.  [**Link Function**: Establishes the relationship between the mean of the dependent variable and the linear predictor.]
+1.  [Random Component: Specifies the distribution of the dependent variable.]
+2.  [Systematic Component: Describes the linear predictor, a linear combination of explanatory variables.]
+3.  [Link Function: Establishes the relationship between the mean of the dependent variable and the linear predictor.]
 
 This chapter explains how to apply GLMs to real-world public policy questions using Python, ensuring accurate and reliable analysis.
 
 ### Common Types of Generalized Linear Models
 GLMs cover a broad range of models by combining different distributions and link functions. The most commonly used GLMs in public policy analysis are:
 
-- **Logistic Regression**: Models binary outcomes using the binomial distribution and logit link function. For example, predicting policy adoption (yes/no) or voter turnout (vote/not vote).
-- **Poisson Regression**: Models count data using the Poisson distribution and log link function. For example, analyzing crime incidents, healthcare visits, or public complaints.
-- **Negative Binomial Regression**: An extension of Poisson regression to handle overdispersion, where the variance exceeds the mean. This is common in count data related to crime rates or public health incidents.
-- **Gamma Regression**: Models continuous, positive data using the Gamma distribution and log link function. For example, analyzing healthcare costs or public expenditure.
+- Logistic Regression: Models binary outcomes using the binomial distribution and logit link function. For example, predicting policy adoption (yes/no) or voter turnout (vote/not vote).
+- Poisson Regression: Models count data using the Poisson distribution and log link function. For example, analyzing crime incidents, healthcare visits, or public complaints.
+- Negative Binomial Regression: An extension of Poisson regression to handle overdispersion, where the variance exceeds the mean. This is common in count data related to crime rates or public health incidents.
+- Gamma Regression: Models continuous, positive data using the Gamma distribution and log link function. For example, analyzing healthcare costs or public expenditure.
 
 This chapter demonstrates how to implement these GLMs in Python, providing practical examples from public policy questions.
 
 ### Link Functions and Their Applications
 Link functions transform the linear predictor to ensure the output is within the range of the dependent variable's distribution. The most common link functions in public policy analysis are:
 
-- **Logit Link**: Used in logistic regression for binary outcomes. It transforms probabilities into log-odds, ensuring the output is between 0 and 1.
-- **Log Link**: Used in Poisson and Gamma regression. It ensures non-negative outputs for count and positive continuous data.
-- **Identity Link**: Used when the dependent variable is normally distributed, allowing the mean to be modeled directly as a linear combination of predictors.
+- Logit Link: Used in logistic regression for binary outcomes. It transforms probabilities into log-odds, ensuring the output is between 0 and 1.
+- Log Link: Used in Poisson and Gamma regression. It ensures non-negative outputs for count and positive continuous data.
+- Identity Link: Used when the dependent variable is normally distributed, allowing the mean to be modeled directly as a linear combination of predictors.
 
 Choosing the appropriate link function depends on the nature of the dependent variable and the underlying research question. This chapter provides guidelines for selecting the right link function and demonstrates its implementation in Python.
 
 ### Case Study: Public Health Policy Analysis
 This case study evaluates the impact of public health interventions on the number of hospital visits. Count data models are ideal for this analysis because the dependent variable represents the number of visits, a non-negative integer. We use Poisson regression to model this relationship.
 
-**Research Question**: How do public health interventions, socioeconomic factors, and demographic variables influence the number of hospital visits?
+Research Question: How do public health interventions, socioeconomic factors, and demographic variables influence the number of hospital visits?
 
-**Data Description**: The dataset contains the following variables:
+Data Description: The dataset contains the following variables:
 
 - `hospital_visits`: Count of hospital visits (Dependent Variable)
 - `intervention`: Binary variable indicating whether a public health intervention was implemented (0 = No, 1 = Yes)
@@ -56,8 +56,7 @@ This case study evaluates the impact of public health interventions on the numbe
 This case study demonstrates how to implement Poisson regression using Python, interpret the results, and draw policy implications.
 
 ### Implementing Generalized Linear Models in Python
-**Step 1: Import Libraries and Load Data**
-
+Step 1: Import Libraries and Load Data
 ```python
 import pandas as pd
 import numpy as np
@@ -77,8 +76,7 @@ data = pd.read_csv('public_health_data.csv')
 print(data.head())
 ```
 
-**Step 2: Exploratory Data Analysis (EDA)**
-
+Step 2: Exploratory Data Analysis (EDA)
 ``` 
 # Summary statistics
 print(data.describe())
@@ -103,8 +101,7 @@ plt.savefig('correlation_matrix.png')
 plt.show()
 ```
 
-**Step 3: Poisson Regression Model**
-
+Step 3: Poisson Regression Model
 ``` 
 # Define the formula for Poisson regression
 formula = 'hospital_visits ~ intervention + age + income + urban'
@@ -120,8 +117,7 @@ poisson_model = smf.poisson(formula=formula, data=data).fit()
 print(poisson_model.summary())
 ```
 
-**Step 4: Model Diagnostics and Goodness of Fit**
-
+Step 4: Model Diagnostics and Goodness of Fit
 ``` 
 # Predicted values and residuals
 data['predicted'] = poisson_model.predict()
@@ -145,11 +141,10 @@ print(f'Deviance: {poisson_model.deviance}')
 print(f'Degrees of Freedom: {poisson_model.df_resid}')
 ```
 
-**Step 5: Model Interpretation and Policy Implications**
-
-- **Intervention**: A negative coefficient indicates that public health interventions reduce hospital visits, suggesting cost-effective healthcare policies.
-- **Age**: A positive coefficient indicates that older individuals visit hospitals more frequently, informing targeted healthcare programs.
-- **Income and Urban Residence**: These variables provide insights into socioeconomic disparities, guiding resource allocation and outreach programs.
+Step 5: Model Interpretation and Policy Implications
+- Intervention: A negative coefficient indicates that public health interventions reduce hospital visits, suggesting cost-effective healthcare policies.
+- Age: A positive coefficient indicates that older individuals visit hospitals more frequently, informing targeted healthcare programs.
+- Income and Urban Residence: These variables provide insights into socioeconomic disparities, guiding resource allocation and outreach programs.
 
 The results demonstrate how Poisson regression models count data effectively, providing actionable insights for public health policy.
 
