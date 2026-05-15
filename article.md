@@ -1,3 +1,8 @@
+---
+canonical_link: "https://medium.com/p/915736acfa29"
+date_exported_from_medium: "November 10, 2025"
+---
+
 # Generalized Linear Models for Econometric Analysis of Public Policy Generalized Linear Models (GLMs) extend the flexibility of traditional
 linear regression by allowing the dependent variable to follow...
 
@@ -143,6 +148,4 @@ The results demonstrate how Poisson regression models count data effectively, pr
 ### Key Takeaways and Policy Implications
 Generalized Linear Models provide a flexible and accurate framework for public policy analysis. They handle diverse data types, including binary outcomes, counts, and positive continuous variables, ensuring reliable estimates. This chapter demonstrated how to apply GLMs to real-world public health policy questions using Python, providing practical examples and clear interpretations.
 
-By mastering GLMs, you enhance your ability to analyze complex policy data, ensuring accurate and impactful policy recommendations. This chapter equips you with the skills needed to evaluate public programs, forecast policy outcomes, and guide strategic decisions with confidence. [View original.](https://medium.com/p/915736acfa29)
-
-Exported from [Medium](https://medium.com) on November 10, 2025.
+By mastering GLMs, you enhance your ability to analyze complex policy data, ensuring accurate and impactful policy recommendations. This chapter equips you with the skills needed to evaluate public programs, forecast policy outcomes, and guide strategic decisions with confidence.
