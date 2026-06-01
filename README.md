@@ -11,14 +11,7 @@ Public policy decisions rely on a wide variety of data types. For example, publi
 
 GLMs provide a more flexible framework by allowing the dependent variable to follow distributions such as:
 
-## About
 
-Place the code for this article in this repository.
-The original article export is saved as `article.md`.
-
-## Files
-
-Add your `.ipynb`, `.py`, `.yaml`, `.js`, `.ts`, or other project files here.
 
 ## Disclaimer
 
