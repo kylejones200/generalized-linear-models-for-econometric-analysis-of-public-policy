@@ -19,6 +19,31 @@ GLMs provide a more flexible framework by allowing the dependent variable to fol
 
 Companion materials for the Medium article on Generalized Linear Models — see `article.md` for the full narrative, including a worked Poisson regression example modeling hospital visits as a function of public health interventions, age, income, and urban residence.
 
+## Project Structure
+
+```
+.
+├── README.md           # This file
+├── main.py             # Main entry point
+├── config.yaml         # Configuration file
+├── pyproject.toml      # Python dependencies
+├── src/
+│   └── core.py         # Data simulation, Poisson regression, and diagnostic plots
+├── tests/              # Unit tests
+└── images/             # Generated plots and figures
+```
+
+## Usage
+
+```bash
+python main.py
+```
+
+This simulates the public health intervention / hospital visits case study
+from the article and fits a Poisson regression of `hospital_visits` on
+`intervention`, `age`, `income`, and `urban`, printing the model summary,
+deviance, and degrees of freedom, and saving diagnostic plots.
+
 ## Disclaimer
 
 Educational/demo code only. Not financial, safety, or engineering advice. Use at your own risk. Verify results independently before any production or operational use.
