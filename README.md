@@ -11,38 +11,7 @@ Public policy decisions rely on a wide variety of data types. For example, publi
 
 GLMs provide a more flexible framework by allowing the dependent variable to follow distributions such as:
 
-- Binomial Distribution for binary outcomes (e.g., policy adoption: yes/no)
-- Poisson Distribution for count data (e.g., crime incidents, healthcare visits)
-- Gamma Distribution for continuous, positive data (e.g., healthcare costs)
 
-## Companion code
-
-Companion materials for the Medium article on Generalized Linear Models — see `article.md` for the full narrative, including a worked Poisson regression example modeling hospital visits as a function of public health interventions, age, income, and urban residence.
-
-## Project Structure
-
-```
-.
-├── README.md           # This file
-├── main.py             # Main entry point
-├── config.yaml         # Configuration file
-├── pyproject.toml      # Python dependencies
-├── src/
-│   └── core.py         # Data simulation, Poisson regression, and diagnostic plots
-├── tests/              # Unit tests
-└── images/             # Generated plots and figures
-```
-
-## Usage
-
-```bash
-python main.py
-```
-
-This simulates the public health intervention / hospital visits case study
-from the article and fits a Poisson regression of `hospital_visits` on
-`intervention`, `age`, `income`, and `urban`, printing the model summary,
-deviance, and degrees of freedom, and saving diagnostic plots.
 
 ## Disclaimer
 
